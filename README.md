@@ -77,7 +77,9 @@ These results indicate a strong and reliable prediction model.
 ## 📂 Project Structure
 Energy-Consumption-Predictor/
 │
+
 ├── app.py
+
 ├── energy_model.pkl
 ├── README.md
 │
