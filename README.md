@@ -81,9 +81,12 @@ Energy-Consumption-Predictor/
 ├── app.py
 
 ├── energy_model.pkl
+
 ├── README.md
+
 │
 └── templates/
+
 └── index.html
 
 ---
