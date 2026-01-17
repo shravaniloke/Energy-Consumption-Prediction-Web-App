@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption Predictor</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e6f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background: #1aa3a3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Energy Consumption Predictor</h1>
+    <p>Estimate building energy usage</p>
+
+    <form method="POST">
+        <label>Building Type</label>
+        <select name="building" required>
+            <option value="">--Select--</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Industrial">Industrial</option>
+        </select>
+
+        <label>Square Footage</label>
+        <input type="number" name="area" placeholder="e.g. 2500" required>
+
+        <label>Number of Occupants</label>
+        <input type="number" name="occ" placeholder="e.g. 50" required>
+
+        <label>Appliances Used</label>
+        <input type="number" name="app" placeholder="e.g. 20" required>
+
+        <label>Average Temperature (°C)</label>
+        <input type="number" name="temp" placeholder="e.g. 25" required>
+
+        <label>Day of Week</label>
+        <select name="day" required>
+            <option value="">--Select--</option>
+            <option value="Weekday">Weekday</option>
+            <option value="Weekend">Weekend</option>
+        </select>
+
+        <button type="submit">Predict Energy</button>
+    </form>
+
+    {% if energy %}
+        <div class="result">
+            Predicted Energy Consumption: {{ energy }} units
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
